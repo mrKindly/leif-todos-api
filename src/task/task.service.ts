@@ -23,9 +23,9 @@ export class TaskService {
 
     public addTask(categoryId: string, task: Task): void {
         if (this.tasks.has(categoryId)) {
-            this.tasks.set(categoryId, [...this.tasks.get(categoryId), { ...task, id: TaskService.generateId() } as Task]);
+            this.tasks.set(categoryId, [...this.tasks.get(categoryId), { ...task, id: TaskService.generateId(), done: false } as Task]);
         } else {
-            this.tasks.set(categoryId, [{ ...task, id: TaskService.generateId() } as Task]);
+            this.tasks.set(categoryId, [{ ...task, id: TaskService.generateId(), done: false } as Task]);
         }
     }
 
